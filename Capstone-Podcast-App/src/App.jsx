@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+
+import Header from "./components/Header"
 
 function App() {
   const [data, setData] = useState(null);
@@ -24,6 +24,7 @@ function App() {
 
   return (
     <div>
+      <Header />
       <h1>Sanity check</h1>
       
     </div>
