@@ -29,6 +29,8 @@ function App() {
     return (<Card key={show.id} showData={show} />)
   })
 
+console.log(data);
+
   return (
     <div>
       <Header />
