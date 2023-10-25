@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 
 import Header from "./components/Header"
+import Card from "./components/Card"
 
 function App() {
   const [data, setData] = useState(null);
@@ -25,8 +26,10 @@ function App() {
   return (
     <div>
       <Header />
-      <h1>Sanity check</h1>
-      
+      <Card 
+        data={data.seasons[0]}
+        title={data.title}
+      />
     </div>
   );
 }
