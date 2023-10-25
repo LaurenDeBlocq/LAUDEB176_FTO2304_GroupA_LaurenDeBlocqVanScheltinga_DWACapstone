@@ -10,7 +10,7 @@ function App() {
   
 
   useEffect(() => {
-    fetch('https://podcast-api.netlify.app/id/10716')
+    fetch('https://podcast-api.netlify.app/shows')
       .then(response => response.json())
       .then(data => {
         setData(data);
@@ -22,14 +22,15 @@ function App() {
   if (loading) {
     return <div>Loading...</div>;
   }
+  
+  const previewCards = data.map( (show) => {
+      return (<Card showData={show} />)
+  })
 
   return (
     <div>
       <Header />
-      <Card 
-        data={data.seasons[0]}
-        title={data.title}
-      />
+      {previewCards}
     </div>
   );
 }
