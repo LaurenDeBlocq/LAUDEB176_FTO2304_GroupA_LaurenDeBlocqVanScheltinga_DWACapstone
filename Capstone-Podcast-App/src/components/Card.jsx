@@ -1,12 +1,16 @@
 import React from "react"
-import tbaPic from "../images/tba-rubber-stamp-vector-13488968.jpg"
 
 export default function Card(props) {
 
     return(
         <div className="card">
             <img src={props.showData.image} className="card--img" />
-            <h3>{props.showData.title}</h3>
+            <div className="card--text">
+                <h3 className="card--text-title" >{props.showData.title}</h3>
+                <h4 className="card--text-seasons">No. of Seasons: {props.showData.seasons}</h4>
+            </div>    
         </div>
     )
 }
+
+// <p className="card--text-description">{props.showData.description}</p>

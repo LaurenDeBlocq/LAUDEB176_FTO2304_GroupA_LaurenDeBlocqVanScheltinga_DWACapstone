@@ -22,9 +22,11 @@ function App() {
   if (loading) {
     return <div>Loading...</div>;
   }
+
+  console.log(data);
   
-  const previewCards = data.map( (show) => {
-      return (<Card showData={show} />)
+  const previewCards = data.map( (show) => { 
+    return (<Card key={show.id} showData={show} />)
   })
 
   return (
