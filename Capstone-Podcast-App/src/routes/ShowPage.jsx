@@ -4,6 +4,7 @@ import '../App.css'
 
 import Header from "../components/Header";
 import Season from "../components/Season";
+import Footer from "../components/Footer";
 
 function Show() {
     const {showId} = useParams()
@@ -52,6 +53,8 @@ function Show() {
                 </select>
             </div>
             <Season data={data.seasons[seasonSelect-1]} />
+
+            <Footer />
         </div>
     )
 }

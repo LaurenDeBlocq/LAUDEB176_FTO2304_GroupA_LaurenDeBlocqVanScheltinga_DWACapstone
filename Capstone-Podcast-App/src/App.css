@@ -116,3 +116,22 @@ body {
   padding: 3px;
   margin-left: 5px;
 }
+
+/* ---------- Footer styling ---------- */
+.footer {
+  background-color: #F4A261;
+  text-align: center;
+  margin: 0;
+
+  height: 20vh
+}
+
+.footer--title {
+  padding-top: 2rem;
+  font-size: 30px;
+}
+
+.footer--name {
+  margin:0;
+  font-size: 14px;
+}
