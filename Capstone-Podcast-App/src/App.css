@@ -70,3 +70,20 @@ body {
   margin: 0;
   margin-bottom: 1rem;
 }
+
+/* ---------- Show styling ---------- */
+.show--image {
+  max-width: 200px;
+  height:auto;
+}
+
+.season--selector{
+  display: flex;
+  align-items: center;
+}
+
+.season--selector > select {
+  height: fit-content;
+  padding: 3px;
+  margin-left: 5px;
+}
