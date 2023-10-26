@@ -1,43 +1,21 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-
-import Header from "./components/Header"
-import Card from "./components/Card"
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './HomePage';
+import AboutPage from './AboutPage';
+import ContactPage from './ContactPage';
+import NavBar from './components/Navbar';
 
 function App() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  
-
-  useEffect(() => {
-    fetch('https://podcast-api.netlify.app/shows')
-      .then(response => response.json())
-      .then(data => {
-        setData(data);
-        setLoading(false);
-      })
-      .catch(error => console.error('Error:', error));
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  console.log(data);
-  
-  const previewCards = data.map( (show) => { 
-    return (<Card key={show.id} showData={show} />)
-  })
-
-console.log(data);
-
   return (
-    <div>
-      <Header />
-      {previewCards}
-    </div>
+    <Router>
+      <NavBar />
+      <Routes>  
+        <Route path="/" exact component={HomePage} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/contact" component={ContactPage} />
+      </Routes>
+    </Router>
   );
 }
 
-
-export default App
+export default App;
