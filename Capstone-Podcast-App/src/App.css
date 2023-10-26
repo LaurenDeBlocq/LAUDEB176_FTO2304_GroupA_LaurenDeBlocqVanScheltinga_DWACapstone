@@ -71,6 +71,35 @@ body {
   margin-bottom: 1rem;
 }
 
+/* ---------- Episode preview styling ---------- */
+.episode-preview {
+  display: flex;
+  padding: 1rem;
+}
+
+.episode-preview:hover{
+  background-color: #F8C8A0;
+  text-decoration: underline;
+}
+
+.episode-preview--image {
+  width: 100px;
+  height: 100px;
+}
+
+.episode-preview--text {
+  margin: 0 1em;
+}
+
+.episode-preview--text-title {
+  margin-top: 0%;
+}
+
+.episode-preview--text-description{
+  width: auto;
+  font-size: 14px;
+}
+
 /* ---------- Show styling ---------- */
 .show--image {
   max-width: 200px;

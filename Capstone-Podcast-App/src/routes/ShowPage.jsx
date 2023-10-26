@@ -1,4 +1,4 @@
-import {React, useEffect} from "react"
+import {React, useState, useEffect} from "react"
 import { useParams } from "react-router-dom"
 import '../App.css'
 
@@ -8,12 +8,10 @@ import Season from "../components/Season";
 function Show() {
     const {showId} = useParams()
     
-    const [data, setData] = React.useState(null);
-    const [loading, setLoading] = React.useState(true);
-
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [seasonSelect, setSeasonSelect] = useState(1)
     
-    const [seasonSelect, setSeasonSelect ] = React.useState(0);
-  
 
     useEffect(() => {
         fetch(`https://podcast-api.netlify.app/id/${showId}`)
@@ -32,13 +30,12 @@ function Show() {
     
     const seasonChoice = data.seasons.map( (season) => {
         return (
-        <option value={season.season}>{season.season}</option>)
+        <option value={season.season} key={season.season}>{season.season}</option>)
     })
 
-    console.log(seasonSelect);
-    const handleSeasonSelect = () => {
-        setSeasonSelect(value)
-        console.log(seasonSelect);
+    const handleSeasonSelect = (event) => {
+        const optionValue = event.target.value;
+        setSeasonSelect(optionValue)
     }
 
     return (
@@ -54,8 +51,7 @@ function Show() {
                     {seasonChoice}
                 </select>
             </div>
-            <Season  />
-            {/* <Season data={data} /> */}
+            <Season data={data.seasons[seasonSelect-1]} />
         </div>
     )
 }
