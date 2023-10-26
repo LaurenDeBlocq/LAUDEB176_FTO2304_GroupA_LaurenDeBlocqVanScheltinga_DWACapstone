@@ -16,14 +16,18 @@ export default function Card(props) {
         genreText += element+"-"
     })
 
+    
+
+    
+
     return(
-        <div className="card">
+        <div className="card"  >
             <img src={props.showData.image} className="card--img" />
             <div className="card--text">
-                <h3 className="card--text-title" >{props.showData.title}</h3>
-                <h5 className="card--text-seasons h5">No. of Seasons: {props.showData.seasons}</h5>
-                <h5 className="card--text-genres h5">Genres: {genreText}</h5>
-                <h6>Last updated: {lastUpdated}</h6>
+                <h4 className="card--text-title" >{props.showData.title}</h4>
+                <h5 className="card--text-seasons card--text-item ">No. of Seasons: <strong>{props.showData.seasons}</strong></h5>
+                <h5 className="card--text-genres card--text-item"><u>Genres:</u><br /><strong>{genreText}</strong></h5>
+                <h6 className="card--text-item"><u>Last updated:</u> <strong>{lastUpdated}</strong></h6>
             </div>    
         </div>
     )
