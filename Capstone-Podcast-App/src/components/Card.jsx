@@ -1,5 +1,6 @@
 import React from "react"
 import genreList from "../genres"
+import { Link } from "react-router-dom"
 
 export default function Card(props) {
     const updated = new Date(props.showData.updated)
@@ -21,7 +22,7 @@ export default function Card(props) {
     
 
     return(
-        <div className="card"  >
+        <Link to={`show/`+ props.showData.id} className="card" >
             <img src={props.showData.image} className="card--img" />
             <div className="card--text">
                 <h4 className="card--text-title" >{props.showData.title}</h4>
@@ -29,7 +30,7 @@ export default function Card(props) {
                 <h5 className="card--text-genres card--text-item"><u>Genres:</u><br /><strong>{genreText}</strong></h5>
                 <h6 className="card--text-item"><u>Last updated:</u> <strong>{lastUpdated}</strong></h6>
             </div>    
-        </div>
+       </Link>
     )
 }
 

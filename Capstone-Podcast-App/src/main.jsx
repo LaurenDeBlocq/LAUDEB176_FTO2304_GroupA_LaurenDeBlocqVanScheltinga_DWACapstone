@@ -4,18 +4,22 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import "./index.css";
-import Root, { loader as rootLoader } from "./routes/root";
+// import "./index.css";
 import ErrorPage from "./error-page";
+import Show from "./routes/ShowPage";
+import HomePage from "./routes/HomePage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <HomePage />,
     errorElement: <ErrorPage />,
-    loader: rootLoader,
+    //loader: rootLoader,
   },
-  { }
+  { 
+    path: "show/:showId",
+    element: <Show />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
