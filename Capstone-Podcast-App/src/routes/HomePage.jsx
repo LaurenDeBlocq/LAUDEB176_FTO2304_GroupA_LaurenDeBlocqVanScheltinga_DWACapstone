@@ -4,6 +4,7 @@ import '../App.css'
 import Header from "../components/Header"
 import Card from "../components/Card"
 import Footer from '../components/Footer';
+import Filter from '../components/Filter';
 
 function HomePage() {
   const [data, setData] = useState(null);
@@ -31,6 +32,7 @@ function HomePage() {
   return (
     <div>
       <Header />
+      <Filter />
       {previewCards}
       <Footer />
     </div>
