@@ -1,21 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Episode from "./Episode";
 import AudioPlayer from "./AudioPlayer";
 
 function Season(props) {
     const [isPlaying, setIsPlaying] = React.useState(false)
-    const [whatIsPlaying, setWhatIsPlaying] = React.useState({})
-    
+    const [whatIsPlaying, setWhatIsPlaying] = React.useState({
+        title: "",
+        description: "",
+        episode: 0,
+        file: "",
+    })
+            
     function handleClick(props) {
-        if (isPlaying === false) {
-            setIsPlaying(true)
-        }
-        console.log(props);
-        if (isPlaying) {
-            setWhatIsPlaying({...props})
-        }
-        console.log(whatIsPlaying);
+        setWhatIsPlaying(props)
     }
+    useEffect(()=>{
+        setIsPlaying(true)
+    },[whatIsPlaying])
+
+    useEffect(() => {
+        setWhatIsPlaying({ title: "",
+        description: "",
+        episode: 0,
+        file: "",})
+    }, [props.data.season])
 
     const episodePreviews = props.data.episodes.map( (episode) => {
         return(
@@ -31,8 +39,8 @@ function Season(props) {
     })
     
     let audio
-    if (isPlaying) {
-        audio = <AudioPlayer data={whatIsPlaying} />
+    if (whatIsPlaying.file) {
+        audio = <AudioPlayer key={whatIsPlaying.title} data={whatIsPlaying} />
     }
 
     return (
