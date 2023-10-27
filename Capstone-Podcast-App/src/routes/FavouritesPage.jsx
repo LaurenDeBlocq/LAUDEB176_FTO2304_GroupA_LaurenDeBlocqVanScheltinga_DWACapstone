@@ -1,9 +1,15 @@
 import React from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function FavouritesPage() {
-    return (
-        <h1>Favourites page goes here</h1>
-    )
+  return (
+    <>
+      <Header />
+
+      <Footer />
+    </>
+  );
 }
 
-export default FavouritesPage
+export default FavouritesPage;

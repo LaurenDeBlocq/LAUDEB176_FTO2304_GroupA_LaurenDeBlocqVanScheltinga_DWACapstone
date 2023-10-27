@@ -11,6 +11,8 @@ body {
   align-items: center;
   margin: 0;
   background-color: #F4A261;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .header--logo {
@@ -37,6 +39,21 @@ body {
   margin: 1rem;
 }
 
+.nav {
+  background-color: #FCE9D9;
+  padding: 1em;
+  border-radius: 5px;
+  margin: 1rem 2rem;
+  display: flex;
+}
+
+.nav--link {
+  text-decoration: none;
+  color: black;
+  margin: 0;
+  
+}
+
 /* ---------- Card styling ---------- */
 .card {
   max-width: 100%;
@@ -50,7 +67,6 @@ body {
 
 .card:hover {
   background-color:#F8C8A0;
-  text-decoration: underline;
 }
 
 .card--img {
@@ -195,7 +211,7 @@ body {
   background-color: #F4A261;
   text-align: center;
   margin: 0;
-
+  
   height: 20vh
 }
 
