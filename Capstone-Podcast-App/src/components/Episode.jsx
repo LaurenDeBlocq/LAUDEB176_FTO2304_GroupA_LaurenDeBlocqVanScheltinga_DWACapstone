@@ -10,7 +10,7 @@ export default function Episode(props) {
                 <h3 className="episode-preview--text-title">{props.data.title}</h3>
                 <p className="episode-preview--text-description">{props.data.description}</p>
             </div>
-            <img src={favourite} />
+            <img src={favourite} className="episode-preview--fav"/>
         </div >
     )
 }

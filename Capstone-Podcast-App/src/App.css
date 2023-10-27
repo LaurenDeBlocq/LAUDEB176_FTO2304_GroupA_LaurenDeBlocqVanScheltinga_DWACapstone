@@ -91,6 +91,7 @@ body {
 
 .episode-preview--text {
   margin: 0 1em;
+  margin-right:auto;
 }
 
 .episode-preview--text-title {
@@ -100,6 +101,12 @@ body {
 .episode-preview--text-description{
   width: auto;
   font-size: 14px;
+}
+
+.episode-preview--fav {
+  width: 40px;
+  height: 40px;
+  justify-content: end;
 }
 
 /* ---------- Show styling ---------- */
