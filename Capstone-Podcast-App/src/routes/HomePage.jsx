@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import Filter from "../components/Filter";
 import Fuse from "fuse.js";
 
-function HomePage() {
+function HomePage({ supabase }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loadedShows, setLoadedShows] = useState(data);
@@ -105,7 +105,7 @@ function HomePage() {
 
   return (
     <div>
-      <Header />
+      <Header supabase={supabase} />
       <Filter
         handleFilterSelect={handleFilterSelect}
         handleFilterSearch={handleFilterSearch}

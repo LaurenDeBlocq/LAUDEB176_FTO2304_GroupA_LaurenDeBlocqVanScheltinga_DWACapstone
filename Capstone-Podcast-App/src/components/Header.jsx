@@ -2,7 +2,11 @@ import React from "react";
 import logo from "../images/on-air.png";
 import Navbar from "./Navbar";
 
-export default function Header() {
+export default function Header({ supabase }) {
+  async function handleSignOut() {
+    const { error } = await supabase.auth.signOut();
+  }
+
   return (
     <header className="header">
       <div className="header--logo">
@@ -13,6 +17,9 @@ export default function Header() {
           Podcasts
         </h3>
       </div>
+      <button onClick={handleSignOut} type="button" className="sign-out-button">
+        Sign Out
+      </button>
       <Navbar />
     </header>
   );

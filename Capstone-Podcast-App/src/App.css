@@ -152,7 +152,7 @@ body {
   font-size: 14px;
 }
 
-.episode-preview--fav {
+.episode-preview--fav-img {
   width: 40px;
   height: 40px;
   justify-content: end;
@@ -211,7 +211,7 @@ body {
   background-color: #F4A261;
   text-align: center;
   margin: 0;
-  
+
   height: 20vh
 }
 
