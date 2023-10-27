@@ -4,21 +4,30 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-// import "./index.css";
+
 import ErrorPage from "./error-page";
 import Show from "./routes/ShowPage";
 import HomePage from "./routes/HomePage";
+import EpisodePage from "./routes/EpisodePage";
+import FavouritesPage from "./routes/FavouritesPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
     errorElement: <ErrorPage />,
-    //loader: rootLoader,
   },
   { 
     path: "show/:showId",
     element: <Show />
+  },
+  {
+    path: ":showName/:seasonNum/:episodeNum",
+    element: <EpisodePage />,
+  },
+  {
+    path: "favourites/",
+    element: <FavouritesPage />
   }
 ]);
 

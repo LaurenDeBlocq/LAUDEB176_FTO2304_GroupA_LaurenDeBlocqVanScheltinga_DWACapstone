@@ -5,7 +5,13 @@ function Season(props) {
 
     const episodePreviews = props.data.episodes.map( (episode) => {
         return(
-        <Episode data={episode} key={episode.episode} image={props.data.image} />
+        <Episode 
+            data={episode} 
+            key={episode.episode} 
+            image={props.data.image} 
+            showName={props.showName}
+            seasonNum={props.data.title.replace(" ", "-")}  
+        />
         )
     })
 

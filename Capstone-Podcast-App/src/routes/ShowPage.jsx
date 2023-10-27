@@ -46,13 +46,14 @@ function Show() {
             <h1>{data.title}</h1>
             <img src={data.image} className="show--image" />
             <p className="show--description">{data.description}</p>
+            
             <div className="season--selector">
                 <p>Season:</p>
                 <select onChange={handleSeasonSelect} >
                     {seasonChoice}
                 </select>
             </div>
-            <Season data={data.seasons[seasonSelect-1]} />
+            <Season data={data.seasons[seasonSelect-1]} showName={data.title.replaceAll(" ", "-")} />
 
             <Footer />
         </div>
