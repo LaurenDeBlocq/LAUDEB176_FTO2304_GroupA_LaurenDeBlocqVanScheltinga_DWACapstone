@@ -10,16 +10,11 @@ export default function Card(props) {
     props.showData.genres.forEach((genre) => {
         genreList.map( (key) => {if (genre === key.id) {genres.push(key.genre)} })
     })
-    console.log(genres);
 
     let genreText = "-"
     genres.forEach((element) => {
         genreText += element+"-"
     })
-
-    
-
-    
 
     return(
         <Link to={`show/`+ props.showData.id} className="card" >
