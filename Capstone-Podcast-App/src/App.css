@@ -73,6 +73,18 @@ body {
   margin-bottom: 1rem;
 }
 
+/* ---------- Season preview styling ---------- */
+.season-card {
+  display: flex;
+  padding: 1rem;
+}
+
+.season-card--image {
+  max-width: 150px;
+  max-height: 150px;
+
+}
+
 /* ---------- Episode preview styling ---------- */
 .episode-preview {
   display: flex;
@@ -85,8 +97,8 @@ body {
 }
 
 .episode-preview--image {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 
 .episode-preview--text {

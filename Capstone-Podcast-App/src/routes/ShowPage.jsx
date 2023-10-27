@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom"
 import '../App.css'
 
 import Header from "../components/Header";
-import Season from "../components/Season";
 import Footer from "../components/Footer";
+import SeasonCard from "../components/SeasonCard";
 
 function Show() {
     const {showId} = useParams()
@@ -28,6 +28,9 @@ function Show() {
         return <div>Loading...</div>;
     }
 
+    const seasonCards = data.seasons.map( (season) => {
+        return( <SeasonCard data={season} key={season.season} /> )
+    })
     
     // const seasonChoice = data.seasons.map( (season) => {
     //     return (
@@ -48,7 +51,7 @@ function Show() {
                 <p className="show--description">{data.description}</p>
             </div>    
 
-            
+            {seasonCards}
 
             <Footer />
         </div>

@@ -1,7 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function SeasonCard() {
+export default function SeasonCard(props) {
     return (
-        <h1>Season Card goes here</h1>
+        <Link to={"season/" + props.data.season} className="season-card card">
+            <img src={props.data.image} className="season-card--image" />
+            <div className="season-card--text">
+                <h3 className="season-card--title" >{props.data.title}</h3>
+                <h4 className="season-card--episodes">Episodes: <strong>{props.data.episodes.length}</strong></h4>
+            </div>
+        </Link>
     )
 }

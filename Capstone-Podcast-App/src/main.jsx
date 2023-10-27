@@ -9,6 +9,7 @@ import ErrorPage from "./error-page";
 import Show from "./routes/ShowPage";
 import HomePage from "./routes/HomePage";
 import FavouritesPage from "./routes/FavouritesPage";
+import SeasonPage from "./routes/SeasonPage";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   { 
     path: "show/:showId",
     element: <Show />
+  },
+  {
+    path: "show/:showId/season/:seasonId",
+    element: <SeasonPage />
   },
   {
     path: "favourites/",
