@@ -115,9 +115,21 @@ body {
   height:auto;
 }
 
+.show--text {
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.show--description {
+  text-align: center;
+}
+
 .season--selector{
   display: flex;
   align-items: center;
+  margin-left: 1rem;
 }
 
 .season--selector > select {

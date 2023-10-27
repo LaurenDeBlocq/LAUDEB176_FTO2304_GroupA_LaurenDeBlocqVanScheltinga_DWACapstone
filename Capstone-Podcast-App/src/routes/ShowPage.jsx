@@ -42,11 +42,11 @@ function Show() {
     return (
         <div className="show">
             <Header />
-
-            <h1>{data.title}</h1>
-            <img src={data.image} className="show--image" />
-            <p className="show--description">{data.description}</p>
-            
+            <div className="show--text">
+                <h1>{data.title}</h1>
+                <img src={data.image} className="show--image" />
+                <p className="show--description">{data.description}</p>
+            </div>    
             <div className="season--selector">
                 <p>Season:</p>
                 <select onChange={handleSeasonSelect} >
