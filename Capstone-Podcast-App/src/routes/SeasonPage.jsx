@@ -1,7 +1,5 @@
 import { React, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Season from "../components/Season";
 
 export default function SeasonPage() {
@@ -22,7 +20,7 @@ export default function SeasonPage() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   }
 
   const seasonChoice = data.seasons.map((season) => {
@@ -37,6 +35,7 @@ export default function SeasonPage() {
     const optionValue = event.target.value;
     setSeasonSelect(optionValue);
   };
+
   return (
     <>
       <Link to={"/show/" + showId}>

@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import "../App.css";
 
-import Header from "../components/Header";
 import Card from "../components/Card";
-import Footer from "../components/Footer";
 import Filter from "../components/Filter";
 import Fuse from "fuse.js";
+import CarouselPage from "../components/Carousel";
 
 function HomePage({ supabase }) {
   const [data, setData] = useState([]);
@@ -83,7 +82,7 @@ function HomePage({ supabase }) {
   }, [searchTerm, filterType]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   }
 
   const handleFilterSearch = (event) => {
@@ -103,15 +102,20 @@ function HomePage({ supabase }) {
     return <Card key={show.id} showData={show} />;
   });
 
+  const carouselDetails = [
+    data[Math.floor(Math.random() * data.length)],
+    data[Math.floor(Math.random() * data.length)],
+    data[Math.floor(Math.random() * data.length)],
+  ];
+
   return (
     <div>
-      <Header supabase={supabase} />
+      <CarouselPage details={carouselDetails} />
       <Filter
         handleFilterSelect={handleFilterSelect}
         handleFilterSearch={handleFilterSearch}
       />
       {previewCards}
-      <Footer />
     </div>
   );
 }

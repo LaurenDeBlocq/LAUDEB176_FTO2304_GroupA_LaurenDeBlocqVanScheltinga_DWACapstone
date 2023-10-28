@@ -75,6 +75,11 @@ body {
   color: white;
 }
 
+/* ---------- Carousel styling ---------- */
+.carousel{
+  max-height: 10vp;
+}
+
 /* ---------- Card styling ---------- */
 .card {
   max-width: 100%;
@@ -245,11 +250,20 @@ body {
   color: white;
 }
 
+/* ---------- Loading styling ---------- */
+.loading {
+  min-height: 70vh;
+}
+
 /* ---------- Footer styling ---------- */
 .footer {
   background-color: #F4A261;
   text-align: center;
   margin: 0;
+  flex-shrink: 0;
+
+  position: sticky;
+  top: 80vh;
 
   height: 20vh
 }

@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 import "../App.css";
 import { Link } from "react-router-dom";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import SeasonCard from "../components/SeasonCard";
 
 function Show() {
@@ -25,26 +23,15 @@ function Show() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   }
 
   const seasonCards = data.seasons.map((season) => {
     return <SeasonCard data={season} key={season.season} />;
   });
 
-  // const seasonChoice = data.seasons.map( (season) => {
-  //     return (
-  //     <option value={season.season} key={season.season}>{season.season}</option>)
-  // })
-
-  // const handleSeasonSelect = (event) => {
-  //     const optionValue = event.target.value;
-  //     setSeasonSelect(optionValue)
-  // }
-
   return (
     <div className="show">
-      <Header />
       <Link to={"/"}>
         <button className="page-button">Back</button>
       </Link>
@@ -55,8 +42,6 @@ function Show() {
       </div>
 
       {seasonCards}
-
-      <Footer />
     </div>
   );
 }

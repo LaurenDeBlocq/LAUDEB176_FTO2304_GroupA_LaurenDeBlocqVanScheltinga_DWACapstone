@@ -10,6 +10,7 @@ import Show from "./routes/ShowPage";
 import MainPage from "./routes/MainPage";
 import FavouritesPage from "./routes/FavouritesPage";
 import SeasonPage from "./routes/SeasonPage";
+import HomePage from "./routes/HomePage";
 
 const supabase = createClient(
   "https://usoblofyaksrhhooaimp.supabase.co",
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
     element: <MainPage supabase={supabase} />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
       {
         path: "show/:showId",
         element: <Show />,
