@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../App.css";
+import { Link } from "react-router-dom";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -44,6 +45,9 @@ function Show() {
   return (
     <div className="show">
       <Header />
+      <Link to={"/"}>
+        <button className="page-button">Back</button>
+      </Link>
       <div className="show--text">
         <h1>{data.title}</h1>
         <img src={data.image} className="show--image" />
