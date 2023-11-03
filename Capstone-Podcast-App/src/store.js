@@ -1,8 +1,8 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// import audioReducer from './slices/audioSlice'
+import { configureStore } from "@reduxjs/toolkit";
+import audioReducer from './slices/audioSlice'
 
-// export default configureStore({
-//     reducer: {
-//         audio: audioReducer
-//     }
-// })
+export default configureStore({
+    reducer: {
+        audio: audioReducer
+    }
+})

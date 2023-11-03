@@ -7,7 +7,7 @@ import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import ErrorPage from "./error-page";
 import Show from "./routes/ShowPage";
-import MainPage from "./routes/MainPage";
+import MainPage from "./App";
 import FavouritesPage from "./routes/FavouritesPage";
 import SeasonPage from "./routes/SeasonPage";
 import HomePage from "./routes/HomePage";
@@ -35,11 +35,11 @@ const router = createBrowserRouter([
         path: "show/:showId/season/:seasonId",
         element: <SeasonPage />,
       },
+      {
+        path: "favourites/",
+        element: <FavouritesPage />,
+      },
     ],
-  },
-  {
-    path: "favourites/",
-    element: <FavouritesPage />,
   },
 ]);
 

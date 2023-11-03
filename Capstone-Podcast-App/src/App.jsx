@@ -1,7 +1,8 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+// import AudioPlayer from "./components/AudioPlayer";
 
 export default function MainPage({ supabase }) {
   const [isPlaying, setIsPlaying] = React.useState(false);
@@ -18,6 +19,7 @@ export default function MainPage({ supabase }) {
       <div className="outlet">
         <Outlet />
       </div>
+      {/* <AudioPlayer /> */}
       <Footer />
     </>
   );
